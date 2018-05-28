@@ -36,6 +36,7 @@
     "start": "./node_modules/.bin/webpack-dev-server --hot --inline --mode development"
   },
   "dependencies": {
-    "autoprefixer": "^8.5.0"
+    "autoprefixer": "^8.5.0",
+    "eslint-plugin-react": "^7.8.2"
   }
 }
