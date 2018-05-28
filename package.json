@@ -32,7 +32,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "build": "./node_modules/.bin/webpack",
+    "build": "./node_modules/.bin/webpack --mode production",
     "start": "./node_modules/.bin/webpack-dev-server --hot --inline --mode development"
   },
   "dependencies": {
