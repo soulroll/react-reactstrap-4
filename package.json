@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "./node_modules/.bin/webpack",
-    "start": "./node_modules/.bin/webpack-dev-server --hot --inline"
+    "start": "./node_modules/.bin/webpack-dev-server --hot --inline --mode development"
   },
   "dependencies": {
     "autoprefixer": "^8.5.0"

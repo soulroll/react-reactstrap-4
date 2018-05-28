@@ -20,6 +20,10 @@ module.exports = {
     watchContentBase: true
   },
 
+  node: {
+   fs: "empty"
+  },
+
   module: {
     rules: [
       {
@@ -32,6 +36,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader' // config in .babelrc
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.s?[ac]ss$/,
