@@ -35,8 +35,10 @@
   "scripts": {
     "build": "./node_modules/.bin/webpack --mode production",
     "watch": "./node_modules/.bin/webpack --watch --mode development",
-    "start": "./node_modules/.bin/webpack-dev-server --hot --inline --mode development"
+    "server": "./node_modules/.bin/webpack-dev-server --hot --inline --mode development",
+    "start" : "parallelshell \"npm run watch\" \"npm run server\""
   },
+
   "dependencies": {
     "autoprefixer": "^8.5.0",
     "eslint-plugin-react": "^7.8.2"
