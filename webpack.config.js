@@ -11,13 +11,17 @@ module.exports = {
 
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "./public/dist")
+    path: path.resolve(__dirname, "./public/")
+  },
+
+  watchOptions: {
+    poll: true
   },
 
   devServer: {
-    contentBase: "./public/",
-    historyApiFallback: true,
-    watchContentBase: true
+    contentBase: path.resolve(__dirname, 'public'),
+    publicPath: '/',
+    historyApiFallback: true
   },
 
   node: {
@@ -59,7 +63,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.css'],
+    extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
     modules: [path.resolve(__dirname, "src"), "node_modules"]
   }
 

@@ -18,6 +18,7 @@
     "jest": "^22.4.4",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "parallelshell": "^3.0.2",
     "postcss-flexbugs-fixes": "^3.3.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -33,6 +34,7 @@
   },
   "scripts": {
     "build": "./node_modules/.bin/webpack --mode production",
+    "watch": "./node_modules/.bin/webpack --watch --mode development",
     "start": "./node_modules/.bin/webpack-dev-server --hot --inline --mode development"
   },
   "dependencies": {
