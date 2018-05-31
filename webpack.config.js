@@ -11,7 +11,7 @@ module.exports = {
 
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "./public/")
+    path: path.resolve(__dirname, "./public/js/")
   },
 
   watchOptions: {
@@ -20,7 +20,7 @@ module.exports = {
 
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
-    publicPath: '/',
+    publicPath: '/js/',
     historyApiFallback: true
   },
 

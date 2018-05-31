@@ -1,3 +1,10 @@
 body {
   background-color: #fff;
 }
+.carousel-item img {
+  max-width: 100%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  cursor: pointer;
+}
