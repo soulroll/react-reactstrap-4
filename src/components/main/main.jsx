@@ -2,8 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from '../pages/home';
-import Roster from '../pages/roster';
-import Schedule from '../pages/schedule';
+import Components from '../pages/components';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -16,8 +15,7 @@ const Main = () => (
       <main>
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/roster' component={Roster}/>
-          <Route path='/schedule' component={Schedule}/>
+          <Route path='/components' component={Components}/>
         </Switch>
       </main>
     </div>

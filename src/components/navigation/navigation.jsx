@@ -35,10 +35,7 @@ class Navigation extends Component {
                 <Link to='/' className="nav-link">Home</Link>
               </NavItem>
               <NavItem>
-                <Link to='/roster' className="nav-link">Roster</Link>
-              </NavItem>
-              <NavItem>
-                <Link to='/schedule' className="nav-link">Schedule</Link>
+                <Link to='/components' className="nav-link">Components</Link>
               </NavItem>
             </Nav>
           </Collapse>
