@@ -6,22 +6,60 @@ import {
   NavItem,
   NavLink,
   Button,
-  ButtonGroup
+  ButtonGroup,
+  ButtonDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Collapse,
+  Card,
+  CardBody
 } from 'reactstrap';
 
 import classnames from 'classnames';
 
 class Tabs extends Component {
+
   constructor(props) {
     super(props);
+
     this.toggle = this.toggle.bind(this);
+
     this.state = {
-      activeTab: '1'
+      activeTab: '1',
+      cSelected: [],
+      dropdownOpen: false,
+      collapse: false,
+      status: 'Closed'
     };
-    this.state = { cSelected: [] };
+
+    this.onEntering = this.onEntering.bind(this);
+    this.onEntered = this.onEntered.bind(this);
+    this.onExiting = this.onExiting.bind(this);
+    this.onExited = this.onExited.bind(this);
+    this.toggleCollapse = this.toggleCollapse.bind(this);
+
     this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
     this.onCheckboxBtnClick = this.onCheckboxBtnClick.bind(this);
+
   }
+
+  onEntering() {
+    this.setState({ status: 'Opening...' });
+  }
+
+  onEntered() {
+    this.setState({ status: 'Opened' });
+  }
+
+  onExiting() {
+    this.setState({ status: 'Closing...' });
+  }
+
+  onExited() {
+    this.setState({ status: 'Closed' });
+  }
+
   onRadioBtnClick(rSelected) {
     this.setState({ rSelected });
   }
@@ -34,13 +72,22 @@ class Tabs extends Component {
     }
     this.setState({ cSelected: [...this.state.cSelected] });
   }
+
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
       });
     }
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
   }
+
+  toggleCollapse() {
+    this.setState({ collapse: !this.state.collapse });
+  }
+
   render() {
     return (
       <div>
@@ -83,6 +130,14 @@ class Tabs extends Component {
               onClick={() => { this.toggle('5'); }}
             >
               Buttons
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              className={classnames({ active: this.state.activeTab === '6' })}
+              onClick={() => { this.toggle('6'); }}
+            >
+              Collapse
             </NavLink>
           </NavItem>
         </Nav>
@@ -219,6 +274,32 @@ class Tabs extends Component {
               <p>Selected: {JSON.stringify(this.state.cSelected)}</p>
             </div>
           </TabPane>
+          <TabPane tabId="6" className="mt-4">
+            <div>
+              <h4>Collapse</h4>
+              <div className="mb-4">
+                <Button color="primary" onClick={this.toggleCollapse} style={{ marginBottom: '1rem' }}>Toggle</Button>
+                <h5>Current state: {this.state.status}</h5>
+                <Collapse
+                  isOpen={this.state.collapse}
+                  onEntering={this.onEntering}
+                  onEntered={this.onEntered}
+                  onExiting={this.onExiting}
+                  onExited={this.onExited}
+                >
+                  <Card>
+                    <CardBody>
+                      Anim pariatur cliche reprehenderit,
+                     enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                     anim keffiyeh helvetica, craft beer labore wes anderson cred
+                     nesciunt sapiente ea proident.
+                    </CardBody>
+                  </Card>
+                </Collapse>
+              </div>
+            </div>
+          </TabPane>
+
         </TabContent>
       </div>
     );
