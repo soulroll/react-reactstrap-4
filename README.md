@@ -1,5 +1,5 @@
 # React Bootstrap 4
-React + Reactstrap + Webpack
+React + React router + Reactstrap + Webpack + Webpack dev server
 
 ## Requirements
 - NPM (sudo apt-get install npm)
