@@ -14,19 +14,26 @@ import {
   Button
 } from 'reactstrap';
 
+import slideone from '../../images/slide-one.jpg';
+import slidetwo from '../../images/slide-two.jpg';
+import slidethree from '../../images/slide-three.jpg';
+import cardone from '../../images/card-one.jpg';
+import cardtwo from '../../images/card-two.jpg';
+import cardthree from '../../images/card-three.jpg';
+
 const items = [
   {
-    src: 'http://via.placeholder.com/1080x400',
+    src: slideone,
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
-    src: 'http://via.placeholder.com/1080x400',
+    src: slidetwo,
     altText: 'Slide 2',
     caption: 'Slide 2'
   },
   {
-    src: 'http://via.placeholder.com/1080x400',
+    src: slidethree,
     altText: 'Slide 3',
     caption: 'Slide 3'
   }
@@ -89,7 +96,7 @@ class HomeSlider extends Component {
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
-        className="mb-5"
+        className="mb-5 carousel-fade"
       >
         <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
@@ -106,7 +113,7 @@ const Home = () => (
     <div className="row">
       <div className="col-lg-4 col-md-6 col-sm-12 mb-5">
         <Card>
-          <CardImg top width="100%" src="http://via.placeholder.com/318x180" alt="Card image cap" />
+          <CardImg top width="100%" src={cardone} alt="Card image cap" />
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
@@ -117,7 +124,7 @@ const Home = () => (
       </div>
       <div className="col-lg-4 col-md-6 col-sm-12 mb-5">
         <Card>
-          <CardImg top width="100%" src="http://via.placeholder.com/318x180" alt="Card image cap" />
+          <CardImg top width="100%" src={cardtwo} alt="Card image cap" />
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
@@ -128,7 +135,7 @@ const Home = () => (
       </div>
       <div className="col-lg-4 col-md-6 col-sm-12 mb-5">
         <Card>
-          <CardImg top width="100%" src="http://via.placeholder.com/318x180" alt="Card image cap" />
+          <CardImg top width="100%" src={cardthree} alt="Card image cap" />
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>

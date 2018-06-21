@@ -55,15 +55,18 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        exclude: /node_modules/,
-        loader: 'url-loader?limit=10000' // will insert a data URI if filesize < 10kb otherwise uses file-loader
+        test: /\.(pdf|jpg|png|gif|svg|ico)$/,
+        use: [
+          {
+              loader: 'url-loader'
+          },
+        ]
       }
     ]
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.json', '.css', '.scss', '.jpg'],
     modules: [path.resolve(__dirname, "src"), "node_modules"]
   }
 
